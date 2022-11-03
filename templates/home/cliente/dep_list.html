@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+
+
+
+{% block content %} 
+
+    <section class="departamentos-home">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Departamentos disponibles en Turismo Real</h1>
+            </div>
+        </div>
+
+        {% for departamento in departamento_list %}
+
+        <div class="d-flex justify-content-center">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <a href="#"><img src="{{ departamento.DEP_IMAGEN1.url }}" class="img-fluid rounded-start" alt="dep_imagen"></a>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <a href="#"><h5 class="card-title">{{ departamento.DEP_NOMBRE }}</h5></a>
+                            <p class="card-text">{{ departamento.DEP_DESCRIPCION }}</p>
+                            <p class="card-text">Valor por noche: <b>{{ departamento.DEP_VALOR_DIA }}</b></p>
+                            <p class="card-text">Dirección: {{ departamento.DEP_DIRECCION }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'DepartamentoDetailView' departamento.DEP_ID %}"><button class="btn btn-secondary">Ver departamento</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </section>
+
+
+{% endblock content %}

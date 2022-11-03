@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block opcionesNavbar %}
+{% endblock %}
+
+{% block js %}
+    <script>
+        function cancelarReserva(id){
+            Swal.fire({
+                "title": "¿Desea cancelar la reserva?",
+                "text": "Esta acción no se puede deshacer",
+                "icon":"question",
+                "showCancelButton": true,
+                "cancelButtonText":"No, volver",
+                "confirmButtonText":"Si, cancelar",
+                "reverseButton":true,
+                "confirmButtonColor": "#dc3545"
+            })
+            .then(function(result){
+                if(result.isConfirmed){
+                    window.location.href="/cancelarReserva/"+id+"/"
+                }
+            })
+
+        }
+    </script>
+{% endblock %}
+
+
+{% block content %}
+
+    <section class="gestionusuarios">
+        <div class="row">
+            <div class="col-lg-12">
+                {% if user.is_staff %} 
+                <a href="{% url 'home_funcionario' %}"><button class="diseñobtnvolver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+                {% else %} 
+                <a href="{% url 'home' %}"><button class="diseñobtnvolver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row gestiontitulo">
+            <div class="col-lg-10">
+                {% if user.is_staff %} 
+                <h1>LISTADO DE RESERVAS TURISMO REAL</h1>
+                {% else %} 
+                <h1>MIS RESERVAS</h1>
+                {% endif %}
+
+                
+            </div>
+            
+        </div>
+
+        <div class="table-responsive-md">
+            <table class="table table-hover">
+                <caption>Listado de reservas</caption>
+                <thead>
+                    <tr>
+                        <th>USUARIO </th>
+                        <th>DEPARTAMENTO</th>
+                        <th>FECHA INGRESO </th>
+                        <th>FECHA SALIDA</th>
+                        <th>CHECK IN</th>
+                        <th>CHECK OUT</th>
+                        <th>OPCIONES</th>      
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reserva in reserva_list %}
+                    <tr>
+                        
+                        <td>{{reserva.RES_USER}}</td>
+                        <td>{{reserva.RES_DEPARTAMENTO}}</td>
+                        <td>{{reserva.RES_FECHA_INGRESO}}</td>
+                        <td>{{reserva.RES_FECHA_SALIDA}}</td>
+                        <td>
+                            {% if reserva.RES_CHECK_IN %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle text-success" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                            </svg>
+                            {% else %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle text-danger" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if reserva.RES_CHECK_OUT %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle text-success" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                            </svg>
+                            {% else %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle text-danger" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" href="{% url 'detalleReserva' reserva.RES_ID %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                </svg>
+                                Ver detalles reserva
+                            </a> 
+                            {% if user.is_staff %} 
+                                {% if not reserva.RES_CHECK_IN %}
+                                <a class="btn btn-info" href="{% url 'checkin' reserva.RES_ID %}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                    </svg>
+                                    Ingresar CHECK IN
+                                </a> 
+                                {% endif %}
+                                {% if reserva.RES_CHECK_IN %}
+                                    {% if reserva.RES_CHECK_OUT %}
+                                    
+                                    {% else %}
+                                    <a class="btn btn-info" href="{% url 'checkout' reserva.RES_ID %}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                        </svg>
+                                        Ingresar CHECK OUT
+                                    </a> 
+                                    {% endif %}
+                                {% endif %}
+                            {% else %} 
+                            <a class="btn btn-danger" href="#" onclick="cancelarReserva({{reserva.RES_ID}})"">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                </svg>
+                                Cancelar reserva
+                            </a>  
+                            {% endif %}  
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+{% endblock %}

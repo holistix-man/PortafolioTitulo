@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block opcionesNavbar %}
+{% endblock %}
+
+{% block content %}
+
+    <section class="gestiondepto">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="{% url 'ReservaList' %}"><button class="diseñobtnvolver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <br>
+                <h2>Ingresar Check In</h2><hr><br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+
+                    <div>
+                        <label for="id_RES_CHECK_IN">Check In:</label>
+                        <input type="checkbox" name="RES_CHECK_IN" id="id_RES_CHECK_IN">
+                    </div>
+                    <div>
+                        <label for="id_RES_VALIDA_CLIENTE">Cliente válido:</label>
+                        <input type="checkbox" name="RES_VALIDA_CLIENTE" required="required" id="id_RES_VALIDA_CLIENTE">
+                    </div>
+                    <div>
+                        <label for="id_RES_CLIST_IN">RES CLIST IN:</label>
+                        <div class="django-ckeditor-widget" data-field-id="id_RES_CLIST_IN" style="display: inline-block;">
+                            <textarea name="RES_CLIST_IN" cols="40" rows="10" id="id_RES_CLIST_IN" data-processed="0" data-config="{"skin": "moono-lisa", "toolbar_Basic": [["Source", "-", "Bold", "Italic"]], "toolbar_Full": [["Styles", "Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker", "Undo", "Redo"], ["Link", "Unlink", "Anchor"], ["Image", "Flash", "Table", "HorizontalRule"], ["TextColor", "BGColor"], ["Smiley", "SpecialChar"], ["Source"]], "toolbar": "Full", "height": 291, "width": 835, "filebrowserWindowWidth": 940, "filebrowserWindowHeight": 725, "language": "es-cl"}" data-external-plugin-resources="[]" data-id="id_RES_CLIST_IN" data-type="ckeditortype"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="id_RES_DEPOSITO_GARANTIA">Deposito de garantía:</label>
+                        <input type="number" name="RES_DEPOSITO_GARANTIA" value="0" class="form-control" id="id_RES_DEPOSITO_GARANTIA">
+                    </div>
+                    {{ form.errors }}
+
+                    <div class="form-group nav justify-content-end">
+                        <button class="btn btn-success" type="submit">Guardar</button>
+                    </div>
+
+
+                </form>
+            </div>
+            
+        </div>
+    </section>
+
+{% endblock %}

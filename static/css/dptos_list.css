@@ -1,0 +1,56 @@
+.departamentos-home .card {
+    max-width: 1125px;
+    display: flex;
+    justify-content: center;
+}
+
+.departamentos-home .card a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.departamentos-home .contenedor{
+
+    justify-content: center;
+
+
+}
+
+
+.detalle-depto .rosa {
+    background-color: #fff1fe;
+}
+
+.rosa .rowvalor .col{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.rosa .rowreserva .col{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.detalle-depto .reserva {
+    padding: 15px;
+    border-radius: 50px;
+    border: 2px solid;
+    background-color: #5d17eb;
+    color: white;
+    width: 300px;
+    margin-top: 30px;
+}
+
+
+.detalle-depto .reserva:hover {
+    border-color: #9b8e99;
+    background-color: #4b08d1;
+    color: rgb(220, 220, 220);
+}

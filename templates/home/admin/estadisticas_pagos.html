@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block opcionesNavbar %}
+{% endblock %}
+
+{% block content %}
+
+
+<section class="estadisticas">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>ESTADISTICAS DE PAGOS TURISMO REAL</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-5">
+            <table class="table table-md">
+                <thead>
+                    <tr>
+                        <th scope="col">METODO PAGO</th>
+                        <th scope="col">TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Débito</td>
+                        <td>{{pagos_debito}}</td>
+                    </tr>
+                    <tr>
+                        <td>Crédito</td>
+                        <td>{{pagos_credito}}</td>
+                    </tr>
+                    <tr>
+                        <td>Transferencia</td>
+                        <td>{{pagos_transferencia}}</td>
+                    </tr>
+                    <tr>
+                        <td>Efectivo</td>
+                        <td>{{pagos_efectivo}}</td>
+                    </tr>
+
+                   
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><b>Cantidad total de pagos: </b></td>
+                        <td><b>{{n_total_pagos}}</b></td>
+                    </tr>
+                </tfoot>
+              </table>
+        </div>
+    </div>
+
+</section>
+
+
+
+<!-- {{v_total_pagado.VALOR_TOTAL_PAGOS}} -->
+
+
+{% endblock %}

@@ -1,0 +1,561 @@
+{% extends 'base.html' %}
+
+
+{% block opcionesNavbar %}
+{% endblock %}
+
+{% block content %}
+
+
+<section class="gestiondepto">
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="{% url 'pago_listall' %}"><button class="diseñobtnvolver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-10">
+            <br>
+            <h1>ESTADISTICAS DE RESERVAS TURISMO REAL</h1>
+            
+        </div>
+        <div class="col-lg-2">
+            <br>
+            <a href="{% url 'generar_reporte' %}" target="_blank"><button class="diseñobtnagregar"><i class="bi bi-list-columns-reverse"></i> Generar reporte</button> </a>
+        </div><br>
+    </div>
+
+    
+
+    <div class="row">
+        <div class="col-lg-6">
+            <h4>Por ZONA</h4>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="accordion accordion-flush" id="acordion_ZONA">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-zona-norte">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-norte" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Reservas ZONA NORTE 
+                                </button>
+                            </h2>
+                            <div id="flush-collapse-norte" class="accordion-collapse collapse" aria-labelledby="flush-zona-norte" data-bs-parent="#acordion_ZONA">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <p>Cantidad de reservas: <b>{{n_reservas_norte}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#zona_norte" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                            <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="zona_norte" aria-labelledby="zona_norte_label">
+                                                <div class="offcanvas-header">
+                                                    <h5 class="offcanvas-title" id="zona_norte_label">Reservas ZONA NORTE</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                </div>
+                                                <div class="offcanvas-body">
+                                                    {% if reservas_norte %}
+                                                        {% for n in reservas_norte %}
+                        
+                                                        <p>{{n.RES_DEPARTAMENTO}}</p>
+                        
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        <p>No hay reservas en ZONA NORTE</p>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            
+                                            <p>Ganancias ZONA NORTE: <b>${{dinero_zona_norte}}</b></p>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-zona-centro">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Reservas ZONA CENTRO 
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-zona-centro" data-bs-parent="#acordion_ZONA">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <p>Cantidad de reservas: <b>{{n_reservas_centro}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#zona_centro" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                            <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="zona_centro" aria-labelledby="zona_centro_label">
+                                                <div class="offcanvas-header">
+                                                    <h5 class="offcanvas-title" id="zona_centro_label">Reservas ZONA CENTRO</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                </div>
+                                                <div class="offcanvas-body">
+                                                    {% if reservas_centro %}
+                                                        {% for c in reservas_centro %}
+                        
+                                                        <p>{{c.RES_DEPARTAMENTO}}</p>
+                        
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        <p>No hay reservas en ZONA CENTRO</p>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            
+                                            <p>Ganancias ZONA CENTRO: <b>{{dinero_zona_centro}}</b></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-zona-sur">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Reservas ZONA SUR 
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-zona-sur" data-bs-parent="#acordion_ZONA">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <p>Cantidad de reservas: <b>{{n_reservas_sur}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#zona_sur" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                            <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="zona_sur" aria-labelledby="zona_sur_label">
+                                                <div class="offcanvas-header">
+                                                    <h5 class="offcanvas-title" id="zona_sur_label">Reservas ZONA SUR</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                </div>
+                                                <div class="offcanvas-body">
+                                                    {% if reservas_sur %}
+                                                        {% for s in reservas_sur %}
+                        
+                                                        <p>{{s.RES_DEPARTAMENTO}}</p>
+                        
+                                                        {% endfor %}
+                
+                                                    {% else %}
+                        
+                                                        <p>No hay reservas en ZONA SUR </p>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+        
+                                            <p>Ganancias ZONA SUR: <b>{{dinero_zona_sur}}</b></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <table class="table table-md">
+                        <thead>
+                            <tr>
+                                <th scope="col">METODO PAGO</th>
+                                <th scope="col">TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Débito</td>
+                                <td>{{pagos_debito}}</td>
+                            </tr>
+                            <tr>
+                                <td>Crédito</td>
+                                <td>{{pagos_credito}}</td>
+                            </tr>
+                            <tr>
+                                <td>Transferencia</td>
+                                <td>{{pagos_transferencia}}</td>
+                            </tr>
+                            <tr>
+                                <td>Efectivo</td>
+                                <td>{{pagos_efectivo}}</td>
+                            </tr>
+        
+                           
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><b>Cantidad total de pagos: </b></td>
+                                <td><b>{{n_total_pagos}}</b></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-lg-6">
+            <h4>Por DEPARTAMENTO</h4>
+
+            <div class="accordion accordion-flush" id="acordion_DEPARTAMENTO">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-antofagasta">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-antofagasta" aria-expanded="false" aria-controls="flush-collapse-antofagasta">
+                         Departamento en Antofagasta
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-antofagasta" class="accordion-collapse collapse" aria-labelledby="flush-antofagasta" data-bs-parent="#acordion_DEPARTAMENTO">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Cantidad de reservas: <b>{{nr_depto_1}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#depto_1" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                    
+                                    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="depto_1" aria-labelledby="depto_1_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="depto_1_label">Reservas DEPARTAMENTO EN ANTOFAGASTA</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            {% if r_depto_1 %}
+                                                {% for r1 in r_depto_1 %}
+                
+                                                <p>{{r1.RES_DEPARTAMENTO}}</p>
+                
+                                                {% endfor %}
+                                            {% else %}
+                                                <p>No hay reservas en Departamento en Antofagasta</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>Ganancias Departamento en Antofagasta: <b>${{dinero_d1}}</b></p>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-2" aria-expanded="false" aria-controls="flush-collapse-2">
+                         Departamento 2
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-2" class="accordion-collapse collapse" aria-labelledby="flush-2" data-bs-parent="#acordion_DEPARTAMENTO">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Cantidad de reservas: <b>{{nr_depto_2}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#depto_2" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                    
+                                    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="depto_2" aria-labelledby="depto_2_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="depto_2_label">Reservas DEPARTAMENTO 2</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            {% if r_depto_2 %}
+                                                {% for r2 in r_depto_2 %}
+                
+                                                <p>{{r2.RES_DEPARTAMENTO}}</p>
+                
+                                                {% endfor %}
+                                            {% else %}
+                                                <p>No hay reservas en Departamento 2</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>Ganancias Departamento 2: <b>${{dinero_d2}}</b></p>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-3" aria-expanded="false" aria-controls="flush-collapse-3">
+                         Departamento 3
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-3" class="accordion-collapse collapse" aria-labelledby="flush-3" data-bs-parent="#acordion_DEPARTAMENTO">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Cantidad de reservas: <b>{{nr_depto_3}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#depto_3" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                    
+                                    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="depto_3" aria-labelledby="depto_3_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="depto_3_label">Reservas DEPARTAMENTO 3</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            {% if r_depto_3 %}
+                                                {% for r3 in r_depto_3 %}
+                
+                                                <p>{{r3.RES_DEPARTAMENTO}}</p>
+                
+                                                {% endfor %}
+                                            {% else %}
+                                                <p>No hay reservas en Departamento 3</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>Ganancias Departamento 3: <b>${{dinero_d3}}</b></p>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-4" aria-expanded="false" aria-controls="flush-collapse-4">
+                         Departamento 4
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-4" class="accordion-collapse collapse" aria-labelledby="flush-4" data-bs-parent="#acordion_DEPARTAMENTO">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Cantidad de reservas: <b>{{nr_depto_4}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#depto_4" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                    
+                                    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="depto_4" aria-labelledby="depto_4_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="depto_4_label">Reservas DEPARTAMENTO 4</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            {% if r_depto_4 %}
+                                                {% for r4 in r_depto_4 %}
+                
+                                                <p>{{r4.RES_DEPARTAMENTO}}</p>
+                
+                                                {% endfor %}
+                                            {% else %}
+                                                <p>No hay reservas en Departamento 4</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>Ganancias Departamento 4: <b>${{dinero_d4}}</b></p>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-5" aria-expanded="false" aria-controls="flush-collapse-5">
+                         Departamento 5
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-5" class="accordion-collapse collapse" aria-labelledby="flush-5" data-bs-parent="#acordion_DEPARTAMENTO">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Cantidad de reservas: <b>{{nr_depto_5}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#depto_5" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                    
+                                    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="depto_5" aria-labelledby="depto_5_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="depto_5_label">Reservas DEPARTAMENTO 5</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            {% if r_depto_5 %}
+                                                {% for r5 in r_depto_5 %}
+                
+                                                <p>{{r5.RES_DEPARTAMENTO}}</p>
+                
+                                                {% endfor %}
+                                            {% else %}
+                                                <p>No hay reservas en Departamento 5</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>Ganancias Departamento 5: <b>${{dinero_d5}}</b></p>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-6" aria-expanded="false" aria-controls="flush-collapse-6">
+                         Departamento 6
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-6" class="accordion-collapse collapse" aria-labelledby="flush-6" data-bs-parent="#acordion_DEPARTAMENTO">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Cantidad de reservas: <b>{{nr_depto_6}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#depto_6" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                    
+                                    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="depto_6" aria-labelledby="depto_6_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="depto_6_label">Reservas DEPARTAMENTO 6</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            {% if r_depto_6 %}
+                                                {% for r6 in r_depto_6 %}
+                
+                                                <p>{{r6.RES_DEPARTAMENTO}}</p>
+                
+                                                {% endfor %}
+                                            {% else %}
+                                                <p>No hay reservas en Departamento 6</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>Ganancias Departamento 6: <b>${{dinero_d6}}</b></p>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-7" aria-expanded="false" aria-controls="flush-collapse-7">
+                         Departamento 7
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-7" class="accordion-collapse collapse" aria-labelledby="flush-7" data-bs-parent="#acordion_DEPARTAMENTO">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Cantidad de reservas: <b>{{nr_depto_7}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#depto_7" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                    
+                                    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="depto_7" aria-labelledby="depto_7_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="depto_7_label">Reservas DEPARTAMENTO 7</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            {% if r_depto_7 %}
+                                                {% for r7 in r_depto_7 %}
+                
+                                                <p>{{r7.RES_DEPARTAMENTO}}</p>
+                
+                                                {% endfor %}
+                                            {% else %}
+                                                <p>No hay reservas en Departamento 7</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>Ganancias Departamento 7: <b>${{dinero_d7}}</b></p>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-8" aria-expanded="false" aria-controls="flush-collapse-8">
+                         Departamento 8
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-8" class="accordion-collapse collapse" aria-labelledby="flush-8" data-bs-parent="#acordion_DEPARTAMENTO">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Cantidad de reservas: <b>{{nr_depto_8}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#depto_8" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                    
+                                    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="depto_8" aria-labelledby="depto_8_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="depto_8_label">Reservas DEPARTAMENTO 8</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            {% if r_depto_8 %}
+                                                {% for r8 in r_depto_8 %}
+                
+                                                <p>{{r8.RES_DEPARTAMENTO}}</p>
+                
+                                                {% endfor %}
+                                            {% else %}
+                                                <p>No hay reservas en Departamento 8</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>Ganancias Departamento 8: <b>${{dinero_d8}}</b></p>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-9" aria-expanded="false" aria-controls="flush-collapse-9">
+                         Departamento 9
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-9" class="accordion-collapse collapse" aria-labelledby="flush-9" data-bs-parent="#acordion_DEPARTAMENTO">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Cantidad de reservas: <b>{{nr_depto_9}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#depto_9" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                    
+                                    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="depto_9" aria-labelledby="depto_9_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="depto_9_label">Reservas DEPARTAMENTO 9</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            {% if r_depto_9 %}
+                                                {% for r9 in r_depto_9 %}
+                
+                                                <p>{{r9.RES_DEPARTAMENTO}}</p>
+                
+                                                {% endfor %}
+                                            {% else %}
+                                                <p>No hay reservas en Departamento 9</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>Ganancias Departamento 9: <b>${{dinero_d9}}</b></p>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-10" aria-expanded="false" aria-controls="flush-collapse-10">
+                         Departamento 10
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-10" class="accordion-collapse collapse" aria-labelledby="flush-10" data-bs-parent="#acordion_DEPARTAMENTO">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Cantidad de reservas: <b>{{nr_depto_10}}</b> <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#depto_10" aria-controls="staticBackdrop">(ver reservas)</a></p>
+                                    
+                                    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="depto_10" aria-labelledby="depto_10_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="depto_10_label">Reservas DEPARTAMENTO 10</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            {% if r_depto_10 %}
+                                                {% for r10 in r_depto_10 %}
+                
+                                                <p>{{r10.RES_DEPARTAMENTO}}</p>
+                
+                                                {% endfor %}
+                                            {% else %}
+                                                <p>No hay reservas en Departamento 10</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>Ganancias Departamento 10: <b>${{dinero_d10}}</b></p>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+   
+    
+</section>
+
+
+{% endblock %}

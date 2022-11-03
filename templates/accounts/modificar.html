@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+
+{% block opcionesNavbar %}
+{% endblock %}
+
+{% block frontis %}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="inicioSesion">
+        <div class="row align-items-center text-center">
+            <div class="col-sm-12  justify-content-center">
+                <h4>
+                    <b>Te damos la bienvenida a Turismo Real</b>
+                </h4>
+                <span class="mb-0 text-muted">
+                    <b>Registro</b> 
+                </span>
+                <p> <br /> </p>	
+                
+                
+
+            </div>
+            <div class="col-12" id="loginCOL">
+                <form class="justify-content-center" role="form" id="formLogin" method="post">
+
+                    {% csrf_token %}
+                    
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Nombre usuario<i class="fa-solid fa-user"></i></span>
+                        </div>
+                        {{ form.username }}
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Nombre <i class="fa-solid fa-user"></i></span>
+                        </div>
+                        {{ form.first_name }}
+                    </div>    
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Apellido<i class="fa-solid fa-user"></i></span>
+                        </div>
+                        {{ form.last_name }}
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Email<i class="fa-solid fa-user"></i></span>
+                        </div>
+                        {{ form.email }}
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Contraseña<i class="fa-solid fa-lock"></i></span>
+                        </div>
+                        {{ form.password1 }}
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Repetir contraseña<i class="fa-solid fa-lock"></i></span>
+                        </div>
+                        {{ form.password2 }}
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Es funcionario<i class="fa-solid fa-user"></i></span>
+                        </div>
+                        {{ form.is_staff }}
+                    </div>  {{ form.errors }}
+
+                    <button type="submit" name="login" id="btnIniciarSesion" class="btn btn-block mb-4">Modificar</button>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="mb-0 text-muted">-------- o usa una de estas opciones --------</span>
+                        </div>
+                        <div class="col-12 anotherLogin">
+                            <i class="fa-brands fa-facebook"></i> 
+                            <i class="fa-brands fa-google"></i>
+                            <a href="{% url 'login' %}" >Iniciar sesion</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

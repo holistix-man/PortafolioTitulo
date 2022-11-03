@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+
+{% block frontis %}
+
+<!-- Esta parte corresponde a la parte inferior de la barra de navegacion del home principal,
+la que contiene la bienvenida a la página. -->
+    <section class="bienvenida">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 ">
+                    <h1><b>ENCUENTRA TU ALOJAMIENTO <br> PARA TUS PRÓXIMAS <br> VACACIONES</b></h1>
+                    <p>Aloja rápido y fácil con Turismo Real</p>
+                </div>
+            </div>    
+            <div class="row d-flex justify-content-around">
+                <!-- SI NO ME EQUIVOCO, CUANDO HAYA FUNCIONALIDAD, ESTO DEBERIA SER UN FORMULARIO (FORM) -->
+                <div class="col-lg-3 col-sm-6">
+                    <p class="header-informacion"><i class="fa-solid fa-location-dot"></i> ¿A dónde vas?</p>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <p class="header-informacion"><i class="fa-solid fa-building"></i> Check in - Check out</p>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <p class="header-informacion"><i class="fa-solid fa-people-group"></i> ¿Cuántas personas?</p>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <p class="header-busqueda blanco"><i class="fa-solid fa-magnifying-glass-location"></i> Búsqueda</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p><i class="fa-solid fa-circle-info"></i> Consigue la información que necesitas. Consulta las últimas restricciones por COVID-19 antes de viajar. <a href="#">Más información</a></p>
+                </div>
+            </div>
+        </div>
+    </section>   
+            
+{% endblock %}
+
+
+
+{% block content %} 
+
+    <section class="diferentes">
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Lo que nos hace diferentes</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><b>Reservas mediante la web</b> </h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta nesciunt magni officia cumque eum?</p>
+                    </div>
+                </div>    
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><b>Valorización de los usuarios</b></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta nesciunt magni officia cumque eum?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><b>Te ofrecemos 10 años en el mercado</b></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta nesciunt magni officia cumque eum?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </section>
+
+
+
+
+{% endblock content %}

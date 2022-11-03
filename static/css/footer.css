@@ -1,0 +1,29 @@
+footer {
+    background-color: #a985ef;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+input {
+    width: 500px;
+    margin-bottom: 10px;
+    padding: 5px 10px 5px 10px;
+    border-color: #a985ef;
+}
+
+
+.texto {
+    padding-bottom: 100px;
+}
+
+
+.enviar {
+    color: white;
+    background-color: #5c16e8;
+    border-color: #5c16e8;
+    width: 300px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+

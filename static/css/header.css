@@ -1,0 +1,104 @@
+
+
+/* ------------ DISEÑO BARRA DE NAVEGACION (NAVBAR) ----------------- */
+
+nav {
+    background-color: #a985ef;
+}
+
+.ul-perfil li {
+    margin-bottom: 10px;
+}
+
+.blanco {
+    color: white;
+}
+
+.negro {
+    color: black;
+}
+
+.diseño-nav {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 50px;
+    background-color: #b698f0;
+    color: white;
+
+}
+
+.diseño-nav:hover {
+    background-color: #9173ce;
+}
+
+.diseño-nav .blanco:hover {
+    color: white
+}
+
+.nav-registro {
+    margin-right: 10px;
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.nav-registro:hover{
+    background-color: rgba(255, 255, 255, 0.671);
+}
+
+.nav-inicio-sesion {
+    margin-right: 10px;
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 50px;
+    background-color: #5c16e8;
+}
+
+.nav-inicio-sesion:hover{
+    background-color: #2c0181;
+}
+
+.nav-inicio-sesion .blanco:hover {
+    color: white
+}
+
+
+/* ---------------- DISEÑO BIENVENIDA A LA PAGINA (HEADER BAJO NAVBAR) -------------------- */
+
+.bienvenida  {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: url("/static/img/fondobienvenida3.svg") 50% 0 no-repeat fixed;
+    transform: rotate(0deg);
+    background-size:cover;
+    background-position:right;
+
+}
+
+.header-busqueda {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: #5c16e8;
+}
+
+.header-busqueda:hover {
+    background-color: #2c0181;
+}
+
+
+.header-informacion {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}

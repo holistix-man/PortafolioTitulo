@@ -1,0 +1,32 @@
+
+.inicioSesion{
+    padding: 120px;
+}
+
+#btnIniciarSesion{
+    background-color: #a985ef;
+    color: white;
+    border-radius: 50px;
+    width: 400px;
+    height: 50px;
+}
+
+
+#formLogin {
+    width: 600px;
+}
+
+#loginCOL {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.anotherLogin i {
+    font-size: 2.5rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

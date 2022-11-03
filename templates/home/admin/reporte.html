@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Turismo Real</title>
+    <link rel="stylesheet" href="{% static 'css/reporte.css' %}">
+</head>
+<body>
+
+    <section class="reporte">
+        <div class="row" id="hola">
+            <div class="col-lg-9" style="display: flex; justify-content:center; text-align:center;">
+                <br>
+                <h1>REPORTE TURISMO REAL </h1>
+                <p>Fecha: {{fecha}}</p> <hr><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Reservas Turismo Real</h2>
+                <p>Cantidad de reservas: <b>{{count}}</b></p>
+                <ul>
+                    <li>Reservas zona norte: {{count_reservas_norte}}</li>
+                    <li>Reservas zona centro: {{count_reservas_centro}}</li>
+                    <li>Reservas zona sur: {{count_reservas_sur}}</li>
+                </ul>
+               
+            </div>
+        </div><hr>
+        <div class="row">
+            <div class="col">
+                <h2>Detalles reservas ZONA NORTE</h2>
+                {% if reservas_norte %}
+                <table class="">
+                    <thead>
+                        <th>DEPARTAMENTO</th>
+                        <th>FECHA RESERVA</th>
+                    </thead>
+                    <tbody>
+                        {% for rn in reservas_norte %}
+                        <tr>
+                            <td>{{rn.RES_DEPARTAMENTO}}</td>
+                            <td>{{rn.RES_FECHA_INGRESO}} - {{rn.RES_FECHA_SALIDA}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p>No hay reservas en ZONA NORTE</p>
+                {% endif %}
+            </div>
+        </div><hr>
+        <div class="row">
+            <div class="col">
+                <h2>Detalles reservas ZONA CENTRO</h2>
+                {% if reservas_centro %}
+                <table>
+                    <thead>
+                        <th>DEPARTAMENTO</th>
+                        <th>FECHA RESERVA</th>
+                    </thead>
+                    <tbody>
+                        {% for rc in reservas_centro %}
+                        <tr>
+                            <td>{{rc.RES_DEPARTAMENTO}}</td>
+                            <td>{{rc.RES_FECHA_INGRESO}} - {{rc.RES_FECHA_SALIDA}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p>No hay reservas en ZONA CENTRO</p>
+                {% endif %}
+            </div>
+        </div><hr>
+        <div class="row">
+            <div class="col">
+                <h2>Detalles reservas ZONA SUR</h2>
+                {% if reservas_sur %}
+                <table>
+                    <thead>
+                        <th>DEPARTAMENTO</th>
+                        <th>FECHA RESERVA</th>
+                    </thead>
+                    <tbody>
+                        {% for rs in reservas_sur %}
+                        <tr>
+                            <td>{{rs.RES_DEPARTAMENTO}}</td>
+                            <td>{{rs.RES_FECHA_INGRESO}} - {{rs.RES_FECHA_SALIDA}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p>No hay reservas en ZONA SUR</p>
+                {% endif %}
+            </div>
+        </div><hr><br>
+        <div class="row">
+            <div class="col">
+                <h2>Ganancias Turismo Real</h2>
+                <p>Total ganancias: <b>${{ganancias}}</b></p>
+                <ul>
+                    <li>Ganancias zona norte: ${{ganancias_norte}}</li>
+                    <li>Ganancias zona centro: ${{ganancias_centro}}</li>
+                    <li>Ganancias zona sur: ${{ganancias_sur}}</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body> 
+</html>

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block opcionesNavbar %}
+{% endblock %}
+
+{% block content %}
+
+    <section class="agregardepto">
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="{% url 'inv_listall' %}"><button class="diseñobtnvolver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+            </div>
+        </div>
+
+        <div class="row gestiontitulo">
+            <div class="col-lg-10">
+                <h1>REGISTRO DE INVENTARIO DE DEPARTAMENTO</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+
+                <form method="POST">
+                    {% csrf_token %}
+    
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.0 }}">Inventario departamento: </label>
+                        {{form.visible_fields.0}}
+                    </div>
+                    {{ form.errors }}
+                    <div class="form-group nav justify-content-end">
+                        <button class="btn btn-success" type="submit">Guardar</button>
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+    </section>
+
+{% endblock %}

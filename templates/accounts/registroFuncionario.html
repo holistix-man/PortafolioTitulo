@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+    <section class="registrofuncionario">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="{% url 'listar_usuario' %}"><button class="diseñobtnvolver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+            </div>
+        </div>
+
+        <div class="row gestiontitulo">
+            <div class="col-lg-10">
+                <h1>REGISTRO DE FUNCIONARIO</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <form method="post">
+
+                    {% csrf_token %}
+
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.0 }}">Rut: </label>
+                        {{form.visible_fields.0}}
+                    </div>
+
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.1 }}">Nombre: </label>
+                        {{form.visible_fields.1}}
+                    </div>
+
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.2 }}">Apellido: </label>
+                        {{form.visible_fields.2}}
+                    </div>
+
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.3 }}">Correo: </label>
+                        {{form.visible_fields.3}}
+                    </div>
+
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.4 }}">Contraseña: </label>
+                        {{form.visible_fields.4}}
+                    </div>
+
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.5 }}">Confirmar contraseña: </label>
+                        {{form.visible_fields.5}}
+                    </div>
+
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.6 }}">Es funcionario: </label>
+                        {{form.visible_fields.6}}
+                    </div>
+                    
+                    <!-- <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Nombre usuario<i class="fa-solid fa-user"></i></span>
+                        </div>
+                        {{ form.username }}
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Nombre <i class="fa-solid fa-user"></i></span>
+                        </div>
+                        {{ form.first_name }}
+                    </div>    
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Apellido<i class="fa-solid fa-user"></i></span>
+                        </div>
+                        {{ form.last_name }}
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Email<i class="fa-solid fa-user"></i></span>
+                        </div>
+                        {{ form.email }}
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Contraseña<i class="fa-solid fa-lock"></i></span>
+                        </div>
+                        {{ form.password1 }}
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Repetir contraseña<i class="fa-solid fa-lock"></i></span>
+                        </div>
+                        {{ form.password2 }}
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Es funcionario<i class="fa-solid fa-user"></i></span>
+                        </div>
+                        {{ form.is_staff }}
+                    </div>  {{ form.errors }} -->
+
+                    <button type="submit" name="login" id="btnIniciarSesion" class="btn btn-block mb-4">Registrar</button>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="mb-0 text-muted">-------- o usa una de estas opciones --------</span>
+                        </div>
+                        <div class="col-12 anotherLogin">
+                            <i class="fa-brands fa-facebook"></i> 
+                            <i class="fa-brands fa-google"></i>
+                            <a href="{% url 'login' %}" >Iniciar sesion</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+
+{% endblock content %}

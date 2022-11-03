@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block opcionesNavbar %}
+{% endblock %}
+
+{% block content %}
+
+    <section class="agregardepto">
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="{% url 'dep_listall' %}"><button class="diseñobtnvolver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+            </div>
+        </div>
+
+        <div class="row gestiontitulo">
+            <div class="col-lg-10">
+                <h1>REGISTRO DE DEPARTAMENTO</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+    
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.0 }}">Nombre departamento: </label>
+                        {{form.visible_fields.0}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.1 }}">Estado departamento: </label>
+                        {{form.visible_fields.1}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.2 }}">Descripción: </label>
+                        {{form.visible_fields.2}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.3 }}">Cantidad de habitaciones: </label>
+                        {{form.visible_fields.3}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.4 }}">Cantidad de camas: </label>
+                        {{form.visible_fields.4}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.5 }}">Cantidad de baños: </label>
+                        {{form.visible_fields.5}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.6 }}">Cantidad de personas: </label>
+                        {{form.visible_fields.6}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.7 }}">Direccion: </label>
+                        {{form.visible_fields.7}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.8 }}">Zona: </label>
+                        {{form.visible_fields.8}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.9 }}">Valor por dia: </label>
+                        {{form.visible_fields.9}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="customFile">Imagen departamento: </label>
+                        {{form.visible_fields.10}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="customFile">Imagen 2 departamento: </label>
+                        {{form.visible_fields.11}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="customFile">Imagen 3 departamento: </label>
+                        {{form.visible_fields.12}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.13 }}">Tour asociado: </label>
+                        {{form.visible_fields.13}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.14 }}">Tour 2 asociado: </label>
+                        {{form.visible_fields.14}}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.subject.errors }}
+                        <label for="{{ form.subject.15 }}">Tour 3 asociado: </label>
+                        {{form.visible_fields.15}}
+                    </div>
+                    {{ form.errors }}
+                    <div class="form-group nav justify-content-end">
+                        <button class="btn btn-success" type="submit">Guardar</button>
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+    </section>
+
+{% endblock %}

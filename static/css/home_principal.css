@@ -1,0 +1,29 @@
+
+.diferentes .card {
+    width: auto;
+    height: auto;
+    border-radius: 70px;
+    padding-top: 50px;
+    padding-bottom: 120px;
+    background-color: #fff1fe;
+    margin-bottom: 20px;
+}
+
+
+.diferentes .card .card-body .card-title {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    padding: 20px;
+    font-weight: 400;
+    filter: opacity(0.6) drop-shadow(0 0 0);
+}
+
+
+.manocelular img {
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
+}

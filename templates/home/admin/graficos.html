@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+    <div class="row">
+        <div class="col-lg-6">
+            <div id="zona-barra">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div id="zona-circular">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="depto">
+
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        Highcharts.chart('zona-barra', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Reservas por ZONA'
+            },
+            subtitle: {
+                text: 'Reservas Turismo Real 2022'
+            },
+            xAxis: {
+                categories: [
+                    'Norte',
+                    'Centro',
+                    'Sur'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                title: {
+                    useHTML: true,
+                    text: 'Cantidad reservas'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Reservas',
+                showInLegend: false,
+                colorByPoint: true,
+                data: {{ grafico_zona }}
+        
+            }]
+        });
+    </script>
+
+    <script>
+        // Data retrieved from https://netmarketshare.com
+    Highcharts.chart('zona-circular', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Porcentaje de reservas por ZONA'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.percentage:.1f} %'
+                }
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: {{grafico_zona|safe}}
+        }]
+    });
+
+    </script>
+    
+    <script>
+        Highcharts.chart('depto', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Reservas por departamento'
+            },
+            subtitle: {
+                text: 'Reservas Turismo Real 2022'
+            },
+            xAxis: {
+                categories: [
+                    'Depto 1',
+                    'Depto 2',
+                    'Depto 3',
+                    'Depto 4',
+                    'Depto 5',
+                    'Depto 6',
+                    'Depto 7',
+                    'Depto 8',
+                    'Depto 9',
+                    'Depto 10'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                title: {
+                    useHTML: true,
+                    text: 'Cantidad de reservas'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Reservas departamento',
+                showInLegend: false,
+                colorByPoint: true,
+                data: {{grafico_departamento}}
+
+            }]
+        });
+    </script>
+</section>
+{% endblock %}

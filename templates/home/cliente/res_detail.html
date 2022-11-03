@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block opcionesNavbar %}
+
+{% endblock %}
+
+{% block content %}
+
+<section class="detalleReserva">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="{% url 'ReservaList' %}"><button class="diseñobtnvolver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+        </div>
+    </div>
+
+    <div class="row centrado">
+        <div class="col-lg-12">
+            <h2>DETALLE RESERVA</h2>
+        </div>
+        <div class="col-lg-12">
+            <p>Reserva realizada por: {{object.RES_USER}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <h4>Reserva</h4>
+            <hr>
+            <p>Departamento: <b>{{object.RES_DEPARTAMENTO}}</b></p>
+            <p>Dirección: {{object.RES_DEPARTAMENTO.DEP_DIRECCION}}</p>
+            <p>Fecha ingreso: <b>{{object.RES_FECHA_INGRESO}}</b> </p>
+            <p>Fecha salida: <b>{{object.RES_FECHA_SALIDA}}</b></p>
+            <p>Cantidad de dias: {{object.RES_CANTIDAD_DIAS}}</p>
+            <p>Asistentes: {{object.RES_ASISTENTES}}</p>
+        </div>
+        <div class="col-lg-4">
+            <h4>Servicios cotratados</h4>
+            <hr>
+            <p>Transporte: {{object.RES_TRANSPORTE}}</p>
+            
+        </div>
+        <div class="col-lg-4">
+            <h4>Factura</h4>
+            <hr>
+            <p>Valor departamento por dia: {{object.RES_DEPARTAMENTO.DEP_VALOR_DIA}}</p>
+            <p>Valor total departamento: {{object.RES_VALOR_DEPARTAMENTO}}</p>
+            <p>Valor servicios extra: {{object.RES_VALOR_SERVICIOS_EXTRA}}</p>
+
+            <p><b>Valor reserva: {{object.VALOR_RESERVA}}</b></p>
+        </div>
+    </div>
+
+
+</section>
+
+{% endblock %}
+
+
