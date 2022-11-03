@@ -134,20 +134,20 @@ def poblar():
 
 
     tour_norte1 = TOUR.objects.get_or_create(   TOU_ID = tour_norte1_id,
-                                                ZON_ID = ZONA.objects.get(ZON_ID=300),
+                                                ZON_ID = ZONA.objects.get(ZON_ID=100),
                                                 TOU_NOMBRE = tour_norte1_nombre,
                                                 TOU_DESCRIPCION = tour_norte1_desc,
                                                 TOU_VALOR = tour_norte1_valor)[0]
 
     tour_norte2 = TOUR.objects.get_or_create(   TOU_ID = tour_norte2_id,
-                                                ZON_ID = ZONA.objects.get(ZON_ID=300),
+                                                ZON_ID = ZONA.objects.get(ZON_ID=100),
                                                 TOU_NOMBRE = tour_norte2_nombre,
                                                 TOU_DESCRIPCION = tour_norte2_desc,
                                                 TOU_VALOR = tour_norte2_valor)[0]
 
 
     tour_norte3 = TOUR.objects.get_or_create(   TOU_ID = tour_norte3_id,
-                                                ZON_ID = ZONA.objects.get(ZON_ID=300),
+                                                ZON_ID = ZONA.objects.get(ZON_ID=100),
                                                 TOU_NOMBRE = tour_norte3_nombre,
                                                 TOU_DESCRIPCION = tour_norte3_desc,
                                                 TOU_VALOR = tour_norte3_valor)[0]
@@ -171,19 +171,19 @@ def poblar():
                                                 TOU_VALOR = tour_centro3_valor)[0]
 
     tour_sur1 = TOUR.objects.get_or_create( TOU_ID = tour_sur1_id,
-                                            ZON_ID = ZONA.objects.get(ZON_ID=100),
+                                            ZON_ID = ZONA.objects.get(ZON_ID=300),
                                             TOU_NOMBRE = tour_sur1_nombre,
                                             TOU_DESCRIPCION = tour_sur1_desc,
                                             TOU_VALOR = tour_sur1_valor)[0]
 
     tour_sur2 = TOUR.objects.get_or_create( TOU_ID = tour_sur2_id,
-                                            ZON_ID = ZONA.objects.get(ZON_ID=100),
+                                            ZON_ID = ZONA.objects.get(ZON_ID=300),
                                             TOU_NOMBRE = tour_sur2_nombre,
                                             TOU_DESCRIPCION = tour_sur2_desc,
                                             TOU_VALOR = tour_sur2_valor)[0]
 
     tour_sur3 = TOUR.objects.get_or_create( TOU_ID = tour_sur3_id,
-                                            ZON_ID = ZONA.objects.get(ZON_ID=100),
+                                            ZON_ID = ZONA.objects.get(ZON_ID=300),
                                             TOU_NOMBRE = tour_sur3_nombre,
                                             TOU_DESCRIPCION = tour_sur3_desc,
                                             TOU_VALOR = tour_sur3_valor)[0]
@@ -211,7 +211,7 @@ def poblar():
     depto1_personas = 4
     depto1_direccion = "Las praderas 3563, Coquimbo"
     # depto1_zona = 
-    depto1_valor = 80000
+    depto1_valor = 110000
     depto1_img1 = "https://pics.nuroa.com/departamento_en_venta_en_la_marina_6690024655489100602.jpg"
     depto1_img2 = "https://media-cdn.tripadvisor.com/media/vr-splice-j/04/5f/43/d1.jpg"
     #depto1_img3 = "https://cf.chilepropiedades.cl/imagenes/publicacion/venta-usada/departamento/coquimbo/0/50c574d43a27439589c0f5745c4220e3.jpeg"
@@ -221,6 +221,198 @@ def poblar():
     depto1_inv = "Este departamento cuenta con servicios de televición HD, WiFi, estacionamiento, piscina, gimnacio."
     depto1_clist = ""
     #depto1_fecha = datetime.today()
+
+    depto2_id = 102
+    depto2_nombre = "Departamento en Antofagasta"
+    #depto1_estado = 
+    depto2_desc = "Departamento ubicado en la II Región de Antofagasta, en el Norte de Chile. Cuenta con una vista al mar que maravilla a todos los huespedes que se hospedan en este departamento."
+    depto2_habitaciones = 2
+    depto2_camas = 3
+    depto2_banos = 1
+    depto2_personas = 4
+    depto2_direccion = "Las cruces 3472, Antofagasta"
+    # depto1_zona = 
+    depto2_valor = 120000
+    depto2_img1 = "https://pics.nuroa.com/departamento_en_venta_en_la_marina_6690024655489100602.jpg"
+    depto2_img2 = "https://media-cdn.tripadvisor.com/media/vr-splice-j/04/5f/43/d1.jpg"
+    #depto1_img3 = "https://cf.chilepropiedades.cl/imagenes/publicacion/venta-usada/departamento/coquimbo/0/50c574d43a27439589c0f5745c4220e3.jpeg"
+    # depto1_tour1 = 
+    # depto1_tour2 =
+    # depto1_tour3 =
+    depto2_inv = "Este departamento cuenta con servicios de televición HD, WiFi, estacionamiento, piscina, gimnacio."
+    depto2_clist = ""
+    #depto1_fecha = datetime.today()
+
+    depto3_id = 103
+    depto3_nombre = "Departamento en Iquique"
+    #depto1_estado = 
+    depto3_desc = "Departamento ubicado en la I Región de Tarapacá, en el Norte de Chile. Cuenta con una vista al mar que maravilla a todos los huespedes que se hospedan en este departamento."
+    depto3_habitaciones = 2
+    depto3_camas = 3
+    depto3_banos = 1
+    depto3_personas = 4
+    depto3_direccion = "Baldomero Lillo 3568, Iquique"
+    # depto1_zona = 
+    depto3_valor = 110000
+    depto3_img1 = "https://pics.nuroa.com/departamento_en_venta_en_la_marina_6690024655489100602.jpg"
+    depto3_img2 = "https://media-cdn.tripadvisor.com/media/vr-splice-j/04/5f/43/d1.jpg"
+    #depto1_img3 = "https://cf.chilepropiedades.cl/imagenes/publicacion/venta-usada/departamento/coquimbo/0/50c574d43a27439589c0f5745c4220e3.jpeg"
+    # depto1_tour1 = 
+    # depto1_tour2 =
+    # depto1_tour3 =
+    depto3_inv = "Este departamento cuenta con servicios de televición HD, WiFi, estacionamiento, piscina, gimnacio."
+    depto3_clist = ""
+    #depto1_fecha = datetime.today()
+
+
+    depto4_id = 104
+    depto4_nombre = "Departamento en Las Condes"
+    #depto1_estado = 
+    depto4_desc = "Departamento ubicado en la Región Metropolitana de Santiago de Chile. Cuenta con una vista a la hermosa ciudad de Santiago que maravilla a todos los huespedes que se hospedan en este departamento."
+    depto4_habitaciones = 3
+    depto4_camas = 5
+    depto4_banos = 2
+    depto4_personas = 6
+    depto4_direccion = "Av. San Carlos de Apoquindo, Santiago"
+    # depto1_zona = 
+    depto4_valor = 110000
+    depto4_img1 = "https://pics.nuroa.com/departamento_en_venta_en_la_marina_6690024655489100602.jpg"
+    depto4_img2 = "https://media-cdn.tripadvisor.com/media/vr-splice-j/04/5f/43/d1.jpg"
+    #depto1_img3 = "https://cf.chilepropiedades.cl/imagenes/publicacion/venta-usada/departamento/coquimbo/0/50c574d43a27439589c0f5745c4220e3.jpeg"
+    # depto1_tour1 = 
+    # depto1_tour2 =
+    # depto1_tour3 =
+    depto4_inv = "Este departamento cuenta con servicios de televición HD, WiFi, estacionamiento, piscina, gimnacio."
+    depto4_clist = ""
+    #depto1_fecha = datetime.today()
+
+    depto5_id = 105
+    depto5_nombre = "Departamento en Providencia"
+    #depto1_estado = 
+    depto5_desc = "Departamento ubicado en la Región Metropolitana de Santiago de Chile. Cuenta con una vista a la hermosa ciudad de Santiago que maravilla a todos los huespedes que se hospedan en este departamento."
+    depto5_habitaciones = 2
+    depto5_camas = 3
+    depto5_banos = 1
+    depto5_personas = 4
+    depto5_direccion = "Av. Bellavista 0415, Santiago"
+    # depto1_zona = 
+    depto5_valor = 130000
+    depto5_img1 = "https://pics.nuroa.com/departamento_en_venta_en_la_marina_6690024655489100602.jpg"
+    depto5_img2 = "https://media-cdn.tripadvisor.com/media/vr-splice-j/04/5f/43/d1.jpg"
+    #depto1_img3 = "https://cf.chilepropiedades.cl/imagenes/publicacion/venta-usada/departamento/coquimbo/0/50c574d43a27439589c0f5745c4220e3.jpeg"
+    # depto1_tour1 = 
+    # depto1_tour2 =
+    # depto1_tour3 =
+    depto5_inv = "Este departamento cuenta con servicios de televición HD, WiFi, estacionamiento, piscina, gimnacio."
+    depto5_clist = ""
+    #depto1_fecha = datetime.today()
+
+    depto6_id = 106
+    depto6_nombre = "Departamento en La Reina"
+    #depto1_estado = 
+    depto6_desc = "Departamento ubicado en la Región Metropolitana de Santiago de Chile. Cuenta con una vista a la hermosa ciudad de Santiago que maravilla a todos los huespedes que se hospedan en este departamento."
+    depto6_habitaciones = 4
+    depto6_camas = 6
+    depto6_banos = 3
+    depto6_personas = 8
+    depto6_direccion = "Av. Larrain 9735, Santiago"
+    # depto1_zona = 
+    depto6_valor = 200000
+    depto6_img1 = "https://pics.nuroa.com/departamento_en_venta_en_la_marina_6690024655489100602.jpg"
+    depto6_img2 = "https://media-cdn.tripadvisor.com/media/vr-splice-j/04/5f/43/d1.jpg"
+    #depto1_img3 = "https://cf.chilepropiedades.cl/imagenes/publicacion/venta-usada/departamento/coquimbo/0/50c574d43a27439589c0f5745c4220e3.jpeg"
+    # depto1_tour1 = 
+    # depto1_tour2 =
+    # depto1_tour3 =
+    depto6_inv = "Este departamento cuenta con servicios de televición HD, WiFi, estacionamiento, piscina, gimnacio."
+    depto6_clist = ""
+    #depto1_fecha = datetime.today()
+
+    depto7_id = 107
+    depto7_nombre = "Departamento en Puerto Varas"
+    #depto1_estado = 
+    depto7_desc = "Departamento ubicado en la Región Puerto Montt, en el sur de Chile. Cuenta con una vista al volcán Osorno que maravilla a todos los huespedes que se hospedan en este departamento."
+    depto7_habitaciones = 4
+    depto7_camas = 6
+    depto7_banos = 3
+    depto7_personas = 8
+    depto7_direccion = "Petrohue 3459, Puerto Varas"
+    # depto1_zona = 
+    depto7_valor = 250000
+    depto7_img1 = "https://pics.nuroa.com/departamento_en_venta_en_la_marina_6690024655489100602.jpg"
+    depto7_img2 = "https://media-cdn.tripadvisor.com/media/vr-splice-j/04/5f/43/d1.jpg"
+    #depto1_img3 = "https://cf.chilepropiedades.cl/imagenes/publicacion/venta-usada/departamento/coquimbo/0/50c574d43a27439589c0f5745c4220e3.jpeg"
+    # depto1_tour1 = 
+    # depto1_tour2 =
+    # depto1_tour3 =
+    depto7_inv = "Este departamento cuenta con servicios de televición HD, WiFi, estacionamiento, piscina, gimnacio."
+    depto7_clist = ""
+    #depto1_fecha = datetime.today()
+
+    depto8_id = 108
+    depto8_nombre = "Departamento en Valdivia"
+    #depto1_estado = 
+    depto8_desc = "Departamento ubicado en la Región de los Lagos, en el sur de Chile. Cuenta con una vista al rio Calle-Calle maravilla a todos los huespedes que se hospedan en este departamento."
+    depto8_habitaciones = 4
+    depto8_camas = 6
+    depto8_banos = 3
+    depto8_personas = 8
+    depto8_direccion = "Los toras 2351, Valdivia"
+    # depto1_zona = 
+    depto8_valor = 220000
+    depto8_img1 = "https://pics.nuroa.com/departamento_en_venta_en_la_marina_6690024655489100602.jpg"
+    depto8_img2 = "https://media-cdn.tripadvisor.com/media/vr-splice-j/04/5f/43/d1.jpg"
+    #depto1_img3 = "https://cf.chilepropiedades.cl/imagenes/publicacion/venta-usada/departamento/coquimbo/0/50c574d43a27439589c0f5745c4220e3.jpeg"
+    # depto1_tour1 = 
+    # depto1_tour2 =
+    # depto1_tour3 =
+    depto8_inv = "Este departamento cuenta con servicios de televición HD, WiFi, estacionamiento, piscina, gimnacio."
+    depto8_clist = ""
+    #depto1_fecha = datetime.today()
+
+    depto9_id = 109
+    depto9_nombre = "Departamento en Puerto Montt"
+    #depto1_estado = 
+    depto9_desc = "Departamento ubicado en la Región de Puerto Montt, en el sur de Chile. Cuenta con una vista a la hermosa ciudad maravilla a todos los huespedes que se hospedan en este departamento."
+    depto9_habitaciones = 4
+    depto9_camas = 6
+    depto9_banos = 3
+    depto9_personas = 8
+    depto9_direccion = "Trauco 9839, Puerto Montt"
+    # depto1_zona = 
+    depto9_valor = 200000
+    depto9_img1 = "https://pics.nuroa.com/departamento_en_venta_en_la_marina_6690024655489100602.jpg"
+    depto9_img2 = "https://media-cdn.tripadvisor.com/media/vr-splice-j/04/5f/43/d1.jpg"
+    #depto1_img3 = "https://cf.chilepropiedades.cl/imagenes/publicacion/venta-usada/departamento/coquimbo/0/50c574d43a27439589c0f5745c4220e3.jpeg"
+    # depto1_tour1 = 
+    # depto1_tour2 =
+    # depto1_tour3 =
+    depto9_inv = "Este departamento cuenta con servicios de televición HD, WiFi, estacionamiento, piscina, gimnacio."
+    depto9_clist = ""
+    #depto1_fecha = datetime.today()
+
+    depto10_id = 110
+    depto10_nombre = "Departamento en Concepción"
+    #depto1_estado = 
+    depto10_desc = "Departamento ubicado en la Región del Biobío, en el sur de Chile. Cuenta con una vista al puente ferroviario que maravilla a todos los huespedes que se hospedan en este departamento."
+    depto10_habitaciones = 2
+    depto10_camas = 3
+    depto10_banos = 1
+    depto10_personas = 4
+    depto10_direccion = "Villa cariño 1356, Concepción"
+    # depto1_zona = 
+    depto10_valor = 210000
+    depto10_img1 = "https://pics.nuroa.com/departamento_en_venta_en_la_marina_6690024655489100602.jpg"
+    depto10_img2 = "https://media-cdn.tripadvisor.com/media/vr-splice-j/04/5f/43/d1.jpg"
+    #depto1_img3 = "https://cf.chilepropiedades.cl/imagenes/publicacion/venta-usada/departamento/coquimbo/0/50c574d43a27439589c0f5745c4220e3.jpeg"
+    # depto1_tour1 = 
+    # depto1_tour2 =
+    # depto1_tour3 =
+    depto10_inv = "Este departamento cuenta con servicios de televición HD, WiFi, estacionamiento, piscina, gimnacio."
+    depto10_clist = ""
+    #depto1_fecha = datetime.today()
+
+
 
     depto1 = DEPARTAMENTO.objects.get_or_create(DEP_ID = depto1_id,
                                                 DEP_NOMBRE = depto1_nombre,
@@ -242,7 +434,200 @@ def poblar():
                                                 DEP_INVENTARIO = depto1_inv,
                                                 DEP_CHECK_LIST = depto1_clist)[0]
 
+
+    depto2 = DEPARTAMENTO.objects.get_or_create(DEP_ID = depto2_id,
+                                                DEP_NOMBRE = depto2_nombre,
+                                                EST_ID = ESTADO.objects.get(EST_ID=100),
+                                                DEP_DESCRIPCION = depto2_desc,
+                                                DEP_CANTIDADHABITACIONES = depto2_habitaciones,
+                                                DEP_CANTIDADCAMAS = depto2_camas,
+                                                DEP_CANTIDADBANOS = depto2_banos,
+                                                DEP_CANTIDADPERSONAS = depto2_personas,
+                                                DEP_DIRECCION = depto2_direccion,
+                                                ZON_ID = ZONA.objects.get(ZON_ID=100),
+                                                DEP_VALOR_DIA = depto2_valor,
+                                                DEP_IMAGEN1 = depto2_img1,
+                                                DEP_IMAGEN2 = depto2_img2,
+                                                #DEP_IMAGEN3 = depto1_img3,
+                                                TOU_ID1 = TOUR.objects.get(TOU_ID=101),
+                                                TOU_ID2 = TOUR.objects.get(TOU_ID=102),
+                                                TOU_ID3 = TOUR.objects.get(TOU_ID=103),
+                                                DEP_INVENTARIO = depto2_inv,
+                                                DEP_CHECK_LIST = depto2_clist)[0]
+
+    depto3 = DEPARTAMENTO.objects.get_or_create(DEP_ID = depto3_id,
+                                                DEP_NOMBRE = depto3_nombre,
+                                                EST_ID = ESTADO.objects.get(EST_ID=100),
+                                                DEP_DESCRIPCION = depto3_desc,
+                                                DEP_CANTIDADHABITACIONES = depto3_habitaciones,
+                                                DEP_CANTIDADCAMAS = depto3_camas,
+                                                DEP_CANTIDADBANOS = depto3_banos,
+                                                DEP_CANTIDADPERSONAS = depto3_personas,
+                                                DEP_DIRECCION = depto3_direccion,
+                                                ZON_ID = ZONA.objects.get(ZON_ID=100),
+                                                DEP_VALOR_DIA = depto3_valor,
+                                                DEP_IMAGEN1 = depto3_img1,
+                                                DEP_IMAGEN2 = depto3_img2,
+                                                #DEP_IMAGEN3 = depto1_img3,
+                                                TOU_ID1 = TOUR.objects.get(TOU_ID=101),
+                                                TOU_ID2 = TOUR.objects.get(TOU_ID=102),
+                                                TOU_ID3 = TOUR.objects.get(TOU_ID=103),
+                                                DEP_INVENTARIO = depto3_inv,
+                                                DEP_CHECK_LIST = depto3_clist)[0]
+
+    depto4 = DEPARTAMENTO.objects.get_or_create(DEP_ID = depto4_id,
+                                                DEP_NOMBRE = depto4_nombre,
+                                                EST_ID = ESTADO.objects.get(EST_ID=100),
+                                                DEP_DESCRIPCION = depto4_desc,
+                                                DEP_CANTIDADHABITACIONES = depto4_habitaciones,
+                                                DEP_CANTIDADCAMAS = depto4_camas,
+                                                DEP_CANTIDADBANOS = depto4_banos,
+                                                DEP_CANTIDADPERSONAS = depto4_personas,
+                                                DEP_DIRECCION = depto4_direccion,
+                                                ZON_ID = ZONA.objects.get(ZON_ID=200),
+                                                DEP_VALOR_DIA = depto4_valor,
+                                                DEP_IMAGEN1 = depto4_img1,
+                                                DEP_IMAGEN2 = depto4_img2,
+                                                #DEP_IMAGEN3 = depto1_img3,
+                                                TOU_ID1 = TOUR.objects.get(TOU_ID=201),
+                                                TOU_ID2 = TOUR.objects.get(TOU_ID=202),
+                                                TOU_ID3 = TOUR.objects.get(TOU_ID=203),
+                                                DEP_INVENTARIO = depto4_inv,
+                                                DEP_CHECK_LIST = depto4_clist)[0]
+
+    depto5 = DEPARTAMENTO.objects.get_or_create(DEP_ID = depto5_id,
+                                                DEP_NOMBRE = depto5_nombre,
+                                                EST_ID = ESTADO.objects.get(EST_ID=100),
+                                                DEP_DESCRIPCION = depto5_desc,
+                                                DEP_CANTIDADHABITACIONES = depto5_habitaciones,
+                                                DEP_CANTIDADCAMAS = depto5_camas,
+                                                DEP_CANTIDADBANOS = depto5_banos,
+                                                DEP_CANTIDADPERSONAS = depto5_personas,
+                                                DEP_DIRECCION = depto5_direccion,
+                                                ZON_ID = ZONA.objects.get(ZON_ID=200),
+                                                DEP_VALOR_DIA = depto5_valor,
+                                                DEP_IMAGEN1 = depto5_img1,
+                                                DEP_IMAGEN2 = depto5_img2,
+                                                #DEP_IMAGEN3 = depto1_img3,
+                                                TOU_ID1 = TOUR.objects.get(TOU_ID=201),
+                                                TOU_ID2 = TOUR.objects.get(TOU_ID=202),
+                                                TOU_ID3 = TOUR.objects.get(TOU_ID=203),
+                                                DEP_INVENTARIO = depto5_inv,
+                                                DEP_CHECK_LIST = depto5_clist)[0]
+
+
+    depto6 = DEPARTAMENTO.objects.get_or_create(DEP_ID = depto6_id,
+                                                DEP_NOMBRE = depto6_nombre,
+                                                EST_ID = ESTADO.objects.get(EST_ID=100),
+                                                DEP_DESCRIPCION = depto6_desc,
+                                                DEP_CANTIDADHABITACIONES = depto6_habitaciones,
+                                                DEP_CANTIDADCAMAS = depto6_camas,
+                                                DEP_CANTIDADBANOS = depto6_banos,
+                                                DEP_CANTIDADPERSONAS = depto6_personas,
+                                                DEP_DIRECCION = depto6_direccion,
+                                                ZON_ID = ZONA.objects.get(ZON_ID=200),
+                                                DEP_VALOR_DIA = depto6_valor,
+                                                DEP_IMAGEN1 = depto6_img1,
+                                                DEP_IMAGEN2 = depto6_img2,
+                                                #DEP_IMAGEN3 = depto1_img3,
+                                                TOU_ID1 = TOUR.objects.get(TOU_ID=201),
+                                                TOU_ID2 = TOUR.objects.get(TOU_ID=202),
+                                                TOU_ID3 = TOUR.objects.get(TOU_ID=203),
+                                                DEP_INVENTARIO = depto6_inv,
+                                                DEP_CHECK_LIST = depto6_clist)[0]
+
+
+    depto7 = DEPARTAMENTO.objects.get_or_create(DEP_ID = depto7_id,
+                                                DEP_NOMBRE = depto7_nombre,
+                                                EST_ID = ESTADO.objects.get(EST_ID=100),
+                                                DEP_DESCRIPCION = depto7_desc,
+                                                DEP_CANTIDADHABITACIONES = depto7_habitaciones,
+                                                DEP_CANTIDADCAMAS = depto7_camas,
+                                                DEP_CANTIDADBANOS = depto7_banos,
+                                                DEP_CANTIDADPERSONAS = depto7_personas,
+                                                DEP_DIRECCION = depto7_direccion,
+                                                ZON_ID = ZONA.objects.get(ZON_ID=300),
+                                                DEP_VALOR_DIA = depto7_valor,
+                                                DEP_IMAGEN1 = depto7_img1,
+                                                DEP_IMAGEN2 = depto7_img2,
+                                                #DEP_IMAGEN3 = depto1_img3,
+                                                TOU_ID1 = TOUR.objects.get(TOU_ID=301),
+                                                TOU_ID2 = TOUR.objects.get(TOU_ID=302),
+                                                TOU_ID3 = TOUR.objects.get(TOU_ID=303),
+                                                DEP_INVENTARIO = depto7_inv,
+                                                DEP_CHECK_LIST = depto7_clist)[0]
+
+    depto8 = DEPARTAMENTO.objects.get_or_create(DEP_ID = depto8_id,
+                                                DEP_NOMBRE = depto8_nombre,
+                                                EST_ID = ESTADO.objects.get(EST_ID=100),
+                                                DEP_DESCRIPCION = depto8_desc,
+                                                DEP_CANTIDADHABITACIONES = depto8_habitaciones,
+                                                DEP_CANTIDADCAMAS = depto8_camas,
+                                                DEP_CANTIDADBANOS = depto8_banos,
+                                                DEP_CANTIDADPERSONAS = depto8_personas,
+                                                DEP_DIRECCION = depto8_direccion,
+                                                ZON_ID = ZONA.objects.get(ZON_ID=300),
+                                                DEP_VALOR_DIA = depto8_valor,
+                                                DEP_IMAGEN1 = depto8_img1,
+                                                DEP_IMAGEN2 = depto8_img2,
+                                                #DEP_IMAGEN3 = depto1_img3,
+                                                TOU_ID1 = TOUR.objects.get(TOU_ID=301),
+                                                TOU_ID2 = TOUR.objects.get(TOU_ID=302),
+                                                TOU_ID3 = TOUR.objects.get(TOU_ID=303),
+                                                DEP_INVENTARIO = depto8_inv,
+                                                DEP_CHECK_LIST = depto8_clist)[0]
+
+    depto9 = DEPARTAMENTO.objects.get_or_create(DEP_ID = depto9_id,
+                                                DEP_NOMBRE = depto9_nombre,
+                                                EST_ID = ESTADO.objects.get(EST_ID=100),
+                                                DEP_DESCRIPCION = depto9_desc,
+                                                DEP_CANTIDADHABITACIONES = depto9_habitaciones,
+                                                DEP_CANTIDADCAMAS = depto9_camas,
+                                                DEP_CANTIDADBANOS = depto9_banos,
+                                                DEP_CANTIDADPERSONAS = depto9_personas,
+                                                DEP_DIRECCION = depto9_direccion,
+                                                ZON_ID = ZONA.objects.get(ZON_ID=300),
+                                                DEP_VALOR_DIA = depto9_valor,
+                                                DEP_IMAGEN1 = depto9_img1,
+                                                DEP_IMAGEN2 = depto9_img2,
+                                                #DEP_IMAGEN3 = depto1_img3,
+                                                TOU_ID1 = TOUR.objects.get(TOU_ID=301),
+                                                TOU_ID2 = TOUR.objects.get(TOU_ID=302),
+                                                TOU_ID3 = TOUR.objects.get(TOU_ID=303),
+                                                DEP_INVENTARIO = depto9_inv,
+                                                DEP_CHECK_LIST = depto9_clist)[0]
+
+    depto10 = DEPARTAMENTO.objects.get_or_create(DEP_ID = depto10_id,
+                                                DEP_NOMBRE = depto10_nombre,
+                                                EST_ID = ESTADO.objects.get(EST_ID=100),
+                                                DEP_DESCRIPCION = depto10_desc,
+                                                DEP_CANTIDADHABITACIONES = depto10_habitaciones,
+                                                DEP_CANTIDADCAMAS = depto10_camas,
+                                                DEP_CANTIDADBANOS = depto10_banos,
+                                                DEP_CANTIDADPERSONAS = depto10_personas,
+                                                DEP_DIRECCION = depto10_direccion,
+                                                ZON_ID = ZONA.objects.get(ZON_ID=300),
+                                                DEP_VALOR_DIA = depto10_valor,
+                                                DEP_IMAGEN1 = depto10_img1,
+                                                DEP_IMAGEN2 = depto10_img2,
+                                                #DEP_IMAGEN3 = depto1_img3,
+                                                TOU_ID1 = TOUR.objects.get(TOU_ID=301),
+                                                TOU_ID2 = TOUR.objects.get(TOU_ID=302),
+                                                TOU_ID3 = TOUR.objects.get(TOU_ID=303),
+                                                DEP_INVENTARIO = depto10_inv,
+                                                DEP_CHECK_LIST = depto10_clist)[0]
+    
+
     depto1.save()
+    depto2.save()
+    depto3.save()
+    depto4.save()
+    depto5.save()
+    depto6.save()
+    depto7.save()
+    depto8.save()
+    depto9.save()
+    depto10.save()
 
 if __name__ =='__main__':
     print("CREACION DE DATOS")
