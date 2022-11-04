@@ -27,7 +27,6 @@
                 <caption>Listado de pagos</caption>
                 <thead>
                     <tr>
-                        <th>ID PAGO</th>
                         <th>MONTO PAGO</th>
                         <th>MÉTODO PAGO</th>
                         <th>FECHA REGISTRO</th>
@@ -35,14 +34,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% if object_list %}
                     {% for objeto in object_list %}
                     <tr>
-                        <td>{{ objeto.PAG_ID }}</td>
                         <td>{{ objeto.PAG_CANTIDAD_PAGADA }}</td>
                         <td>{{objeto.PAG_METODO_PAGO}}</td>
                         <td>{{ objeto.PAG_FECHA_INGRESO }}</td>
                     </tr>
                     {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td>No hay registro de pagos</td>
+                    </tr>
+                    {% endif %}
                 </tbody>
             </table>
         </div>

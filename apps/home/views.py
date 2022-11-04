@@ -312,16 +312,16 @@ def estadisticas_pago(request):
 
 def estadisticas_reservas(request):
     n_total_reservas = RESERVA.objects.all().count()
-    n_reservas_norte = RESERVA.objects.all().filter(RES_DEPARTAMENTO='1').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='3').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='10').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='11').count()
-    n_reservas_centro = RESERVA.objects.all().filter(RES_DEPARTAMENTO='4').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='5').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='6').count()
-    n_reservas_sur = RESERVA.objects.all().filter(RES_DEPARTAMENTO='21').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='22').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='23').count()
+    n_reservas_norte = RESERVA.objects.all().filter(RES_DEPARTAMENTO='101').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='102').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='103').count() 
+    n_reservas_centro = RESERVA.objects.all().filter(RES_DEPARTAMENTO='104').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='105').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='106').count()
+    n_reservas_sur = RESERVA.objects.all().filter(RES_DEPARTAMENTO='107').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='108').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='109').count() | RESERVA.objects.all().filter(RES_DEPARTAMENTO='110').count()
 
 
     reservas = RESERVA.objects.all()
 
-    reservas_norte = RESERVA.objects.all().filter(RES_DEPARTAMENTO='1') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='3') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='10') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='11')
-    reservas_centro = RESERVA.objects.all().filter(RES_DEPARTAMENTO='4') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='5') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='6')
-    reservas_sur = RESERVA.objects.all().filter(RES_DEPARTAMENTO='21') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='22') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='23')
+    reservas_norte = RESERVA.objects.all().filter(RES_DEPARTAMENTO='101') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='102') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='103') 
+    reservas_centro = RESERVA.objects.all().filter(RES_DEPARTAMENTO='104') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='105') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='106')
+    reservas_sur = RESERVA.objects.all().filter(RES_DEPARTAMENTO='107') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='108') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='109') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='110')
 
     dinero_zona_norte = 0
     dinero_zona_centro = 0
@@ -338,27 +338,27 @@ def estadisticas_reservas(request):
 
     departamentos = DEPARTAMENTO.objects.all()
 
-    r_depto_1 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='1')
-    r_depto_2 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='3')
-    r_depto_3 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='4')
-    r_depto_4 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='5')
-    r_depto_5 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='6')
-    r_depto_6 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='8')
-    r_depto_7 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='9')
-    r_depto_8 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='10')
-    r_depto_9 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='11')
-    r_depto_10 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='20')
+    r_depto_1 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='101')
+    r_depto_2 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='102')
+    r_depto_3 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='103')
+    r_depto_4 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='104')
+    r_depto_5 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='105')
+    r_depto_6 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='106')
+    r_depto_7 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='107')
+    r_depto_8 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='108')
+    r_depto_9 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='109')
+    r_depto_10 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='110')
 
-    nr_depto_1 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='1').count()
-    nr_depto_2 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='3').count()
-    nr_depto_3 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='4').count()
-    nr_depto_4 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='5').count()
-    nr_depto_5 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='6').count()
-    nr_depto_6 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='8').count()
-    nr_depto_7 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='9').count()
-    nr_depto_8 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='10').count()
-    nr_depto_9 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='11').count()
-    nr_depto_10 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='20').count()
+    nr_depto_1 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='101').count()
+    nr_depto_2 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='102').count()
+    nr_depto_3 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='103').count()
+    nr_depto_4 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='104').count()
+    nr_depto_5 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='105').count()
+    nr_depto_6 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='106').count()
+    nr_depto_7 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='107').count()
+    nr_depto_8 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='108').count()
+    nr_depto_9 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='109').count()
+    nr_depto_10 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='110').count()
 
     dinero_d1 = 0
     dinero_d2 = 0
@@ -485,9 +485,9 @@ class generar_reporte(View):
 
         reservas = RESERVA.objects.all()
 
-        reservas_norte = RESERVA.objects.all().filter(RES_DEPARTAMENTO='1') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='3') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='10') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='11')
-        reservas_centro = RESERVA.objects.all().filter(RES_DEPARTAMENTO='4') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='5') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='6')
-        reservas_sur = RESERVA.objects.all().filter(RES_DEPARTAMENTO='21') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='22') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='23')
+        reservas_norte = RESERVA.objects.all().filter(RES_DEPARTAMENTO='101') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='102') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='103') 
+        reservas_centro = RESERVA.objects.all().filter(RES_DEPARTAMENTO='104') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='105') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='106')
+        reservas_sur = RESERVA.objects.all().filter(RES_DEPARTAMENTO='107') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='108') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='109') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='110')
 
 
         ganancias = 0
@@ -536,9 +536,9 @@ class graficos(TemplateView):
     def get_grafico_zona(self):
         data = []
         try:
-            reservas_norte = RESERVA.objects.all().filter(RES_DEPARTAMENTO='1') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='3') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='10') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='11')
-            reservas_centro = RESERVA.objects.all().filter(RES_DEPARTAMENTO='4') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='5') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='6')
-            reservas_sur = RESERVA.objects.all().filter(RES_DEPARTAMENTO='21') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='22') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='23')
+            reservas_norte = RESERVA.objects.all().filter(RES_DEPARTAMENTO='101') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='102') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='103') 
+            reservas_centro = RESERVA.objects.all().filter(RES_DEPARTAMENTO='104') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='105') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='106')
+            reservas_sur = RESERVA.objects.all().filter(RES_DEPARTAMENTO='107') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='108') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='109') | RESERVA.objects.all().filter(RES_DEPARTAMENTO='110')
         
             data.append(reservas_norte.count())
             data.append(reservas_centro.count())
@@ -551,16 +551,16 @@ class graficos(TemplateView):
     def get_grafico_departamento(self):
         data=[]
         try:
-            r_depto_1 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='1')
-            r_depto_2 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='3')
-            r_depto_3 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='4')
-            r_depto_4 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='5')
-            r_depto_5 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='6')
-            r_depto_6 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='8')
-            r_depto_7 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='9')
-            r_depto_8 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='10')
-            r_depto_9 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='11')
-            r_depto_10 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='20')
+            r_depto_1 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='101')
+            r_depto_2 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='102')
+            r_depto_3 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='103')
+            r_depto_4 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='104')
+            r_depto_5 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='105')
+            r_depto_6 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='106')
+            r_depto_7 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='107')
+            r_depto_8 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='108')
+            r_depto_9 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='109')
+            r_depto_10 = RESERVA.objects.all().filter(RES_DEPARTAMENTO='110')
 
             data.append(r_depto_1.count())
             data.append(r_depto_2.count())

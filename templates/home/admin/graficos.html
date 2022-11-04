@@ -1,9 +1,21 @@
 {% extends 'base.html' %}
 
+{% block opcionesNavbar %}
+{% endblock %}
+
 {% block content %}
 
-<section>
+<section class="gestiondepto">
     <div class="row">
+        <div class="col-lg-12">
+            <a href="{% url 'home_admin' %}"><button class="diseñobtnvolver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-lg-12">
+            <br>
+            <h2>Estadisticas reservas por ZONA</h2><br>
+        </div>
         <div class="col-lg-6">
             <div id="zona-barra">
             </div>
@@ -15,11 +27,13 @@
         </div>
     </div>
 
-    <div class="row">
-        
-    </div>
+ 
 
     <div class="row">
+        <div class="col-lg-12">
+            <br><br>
+            <h2>Estadisticas reservas por DEPARTAMENTO</h2><br>
+        </div>
         <div class="col-lg-12">
             <div id="depto">
 
@@ -129,16 +143,16 @@
             },
             xAxis: {
                 categories: [
-                    'Depto 1',
-                    'Depto 2',
-                    'Depto 3',
-                    'Depto 4',
-                    'Depto 5',
-                    'Depto 6',
-                    'Depto 7',
-                    'Depto 8',
-                    'Depto 9',
-                    'Depto 10'
+                    'Depto Coquimbo',
+                    'Depto Antofagasta',
+                    'Depto Iquique',
+                    'Depto Las Condes',
+                    'Depto Providencia',
+                    'Depto La Reina',
+                    'Depto Puerto Varas',
+                    'Depto Valdivia',
+                    'Depto Puerto Montt',
+                    'Depto Concepción'
                 ],
                 crosshair: true
             },

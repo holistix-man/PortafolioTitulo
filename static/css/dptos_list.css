@@ -1,3 +1,9 @@
+.departamentos-home{
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .departamentos-home .card {
     max-width: 1125px;
     display: flex;
@@ -17,6 +23,11 @@
 
 }
 
+.detalle-depto{
+    margin-top:20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 .detalle-depto .rosa {
     background-color: #fff1fe;
@@ -53,4 +64,19 @@
     border-color: #9b8e99;
     background-color: #4b08d1;
     color: rgb(220, 220, 220);
+}
+
+.img-principal {
+    max-width: 745px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+}
+
+.img-secundaria {
+    max-width: 400px;
+    max-height: 250px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2px;
 }

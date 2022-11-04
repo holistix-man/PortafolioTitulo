@@ -9,6 +9,12 @@
 
         <div class="row">
             <div class="col-lg-12">
+                <a href="{% url 'DepartamentoList' %}"><button class="diseñobtnvolver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
                 <h1>{{ depto_id.DEP_NOMBRE }}</h1>
             </div>
             <div class="col-lg-12">
@@ -18,15 +24,15 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <img src="{{ depto_id.DEP_IMAGEN1.url }}" alt="foto-departamento" style="max-width: 1000px;">
+                <img src="{{ depto_id.DEP_IMAGEN1.url }}" class="img-principal" alt="foto-departamento" style="max-width: 1000px;">
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6"> 
                 <div class="row">
                     <div class="col-lg-12">
-                        <img src="{{ depto_id.DEP_IMAGEN2.url }}" alt="foto-departamento" style="max-width: 400px;">
+                        <img src="{{ depto_id.DEP_IMAGEN2.url }}" class="img-secundaria" alt="foto-departamento" style="max-width: 400px;">
                     </div>
                     <div class="col-lg-12">
-                        <img src="{{ depto_id.DEP_IMAGEN3.url }}" alt="foto-departamento" style="max-width: 400px;">
+                        <img src="{{ depto_id.DEP_IMAGEN3.url }}" class="img-secundaria" alt="foto-departamento" style="max-width: 400px;">
                     </div>
                 </div>
             </div>

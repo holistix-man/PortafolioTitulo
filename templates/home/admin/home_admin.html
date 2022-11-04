@@ -34,16 +34,7 @@
                   </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-12 col-admin">
-                <div class="dropdown-center">
-                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Más opciones</button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{% url 'home_funcionario' %}">Acceder menú funcionario</a></li>
-                        <li><a class="dropdown-item" href="{% url 'home' %}">Acceder vista cliente</a></li>
-                        <li><a class="dropdown-item" href="#">Próximamente más opciones</a></li>
-                    </ul>
-                  </div>
-            </div>
+            
 
             <div class="col-lg-3 col-md-6 col-sm-12 col-admin">
                 <a href="{% url 'pago_listall' %}"><button>Pagos</button></a>
@@ -55,6 +46,17 @@
 
             <div class="col-lg-3 col-md-6 col-sm-12 col-admin">
                 <a href="{% url 'estadisticas_reservas' %}"><button>Estadisticas reservas</button></a>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-admin">
+                <div class="dropdown-center">
+                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Más opciones</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'home_funcionario' %}">Acceder menú funcionario</a></li>
+                        <li><a class="dropdown-item" href="{% url 'home' %}">Acceder vista cliente</a></li>
+                        <li><a class="dropdown-item" href="#">Próximamente más opciones</a></li>
+                    </ul>
+                  </div>
             </div>
 
             <!-- <div class="col-lg-3 col-admin">
