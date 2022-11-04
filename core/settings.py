@@ -176,7 +176,7 @@ PWA_APP_ICONS = [
     }
 ]
 
-
+#para diagrama de clases
 GRAPH_MODELS = {
 'all_applications': True,
 'group_models': True,
