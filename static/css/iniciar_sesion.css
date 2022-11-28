@@ -4,11 +4,16 @@
 }
 
 #btnIniciarSesion{
-    background-color: #a985ef;
+    background-color: #366f85;
     color: white;
     border-radius: 50px;
     width: 400px;
     height: 50px;
+}
+
+#btnIniciarSesion:hover{
+    background-color: #0c546c;
+
 }
 
 

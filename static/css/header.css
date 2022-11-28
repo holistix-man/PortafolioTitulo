@@ -3,7 +3,7 @@
 /* ------------ DISEÑO BARRA DE NAVEGACION (NAVBAR) ----------------- */
 
 nav {
-    background-color: #a985ef;
+    background-color: #366f85;
 }
 
 .ul-perfil li {
@@ -26,13 +26,13 @@ nav {
     padding-top: 0;
     padding-bottom: 0;
     border-radius: 50px;
-    background-color: #b698f0;
+    background-color: #0c546c;
     color: white;
 
 }
 
 .diseño-nav:hover {
-    background-color: #9173ce;
+    background-color:#1a2f37 ;
 }
 
 .diseño-nav .blanco:hover {
@@ -58,11 +58,11 @@ nav {
     padding-top: 0;
     padding-bottom: 0;
     border-radius: 50px;
-    background-color: #5c16e8;
+    background-color: #114759;
 }
 
 .nav-inicio-sesion:hover{
-    background-color: #2c0181;
+    background-color: #0d2e39;
 }
 
 .nav-inicio-sesion .blanco:hover {
@@ -75,7 +75,6 @@ nav {
 .bienvenida  {
     padding-top: 50px;
     padding-bottom: 50px;
-    background: url("/static/img/fondobienvenida3.svg") 50% 0 no-repeat fixed;
     transform: rotate(0deg);
     background-size:cover;
     background-position:right;
@@ -87,11 +86,11 @@ nav {
     padding-top: 5px;
     padding-left: 10px;
     border-radius: 10px;
-    background-color: #5c16e8;
+    background-color: #114759;
 }
 
 .header-busqueda:hover {
-    background-color: #2c0181;
+    background-color: #0e2c36;
 }
 
 

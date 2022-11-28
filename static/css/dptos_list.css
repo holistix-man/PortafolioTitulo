@@ -25,20 +25,18 @@
 
 .detalle-depto{
     margin-top:20px;
-    padding-left: 10px;
+    padding-left: 20px;
     padding-right: 10px;
 }
 
 .detalle-depto .rosa {
-    background-color: #fff1fe;
+    background-color: #ddecf1;
+    border-radius: 50px;
+    margin-bottom: 20px;
 }
 
 .rosa .rowvalor .col{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-
+    text-align: center;
 }
 
 .rosa .rowreserva .col{
@@ -53,7 +51,8 @@
     padding: 15px;
     border-radius: 50px;
     border: 2px solid;
-    background-color: #5d17eb;
+    background-color: #366f85;
+    border-color: #254a59;
     color: white;
     width: 300px;
     margin-top: 30px;
@@ -61,8 +60,8 @@
 
 
 .detalle-depto .reserva:hover {
-    border-color: #9b8e99;
-    background-color: #4b08d1;
+    border-color: #172d36;
+    background-color: #254a59;
     color: rgb(220, 220, 220);
 }
 
@@ -79,4 +78,55 @@
     width: 100%;
     height: 100%;
     margin-bottom: 2px;
+}
+
+
+.div-img {
+    overflow: hidden;
+}
+
+.div-img img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    object-fit: cover;
+}
+
+.div-img img:hover {
+    transform: scale(1.2);
+}
+
+
+
+.asistentes {
+    max-width: 355px;
+    max-height: 100px;
+    width: 100%;
+    height: 100%;
+}
+
+.transporte{
+    max-height: 50px;
+    max-width: 300px;
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.Descripcion{
+    padding-left: 10px;
+    padding-right: 30px;
+}
+
+.col-location{
+
+}
+
+.location{
+    max-width: 200px;
+    max-height: 200px;
+    height: 100%;
+    width: 100%;
+    
+
 }

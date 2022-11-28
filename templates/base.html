@@ -4,7 +4,7 @@
     {% progressive_web_app_meta %}    
 <head>
     {% load static %} 
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -105,49 +105,27 @@
 
     {% block footer %}
     <footer>
-        <div class="container">
-            <div class="row d-flex justify-content-center text-center blanco">
-                <div class="col-6">
-                    <h2>¿Quieres saber más?</h2>
-                </div>
+               
+        <div class="row footer">
+            <div class="col-lg-4 columna">
+                <h2>Acerca de</h2><br>
+                <p>
+                    Turismo Real es una pequeña empresa dedicada al arriendo de departamentos. Actualmente contamos con 10 departamentos
+                    ubicados a lo largo de todo el pais (norte-centro-sur).
+                </p>
             </div>
-            <div class="row d-flex justify-content-center text-center blanco">
-                <div class="col-8">
-                    <p>Para contactar con Atención al cliente, disponible las 24 horas del dia. <br>Envianos un mensaje o llámanos.</p>
-                </div>
+            <div class="col-lg-4">
+                <h2>Redes sociales</h2><br>
+                <p>- Instagram</p>
+                <p>- Facebook</p>
+                <p>- Twitter</p>
             </div>
-            <div class="row">
-                <div class="col-6">
-                    <p><b>Utiliza las siguientes vías de contacto, o rellena el formulario.</b></p>
-                    <p>Vía E-mail</p>
-                    <a href="#">turismoreal@turismoreal.cl</a>
-                    <p>En nuestras redes sociales</p>
-                    <a href="#">@turismo_real</a>
-                    <p>Por teléfono</p>
-                    <a href="#">+569 5435 5345</a>
-                </div>
-                <div class="col-6">
-                    <div class="row">
-                        <form>
-                            <div class="col-12">
-                                <input type="text" placeholder="Escribe tu nombre">
-                            </div>
-                            <div class="col-12">
-                                <input type="text" placeholder="Escribe tu e-mail">
-                            </div>
-                            <div class="col-12">
-                                <input type="text" placeholder="Escribe tu teléfono (Opcional)">
-                            </div>
-                            <div class="col-12 ">
-                                <input class="texto " type="text" placeholder="Escribe tu mensaje">
-                            </div>
-                            <button class="enviar" type="submit"><b>ENVIAR</b></button>
-                        </form>
-                    </div>
-                    
-                </div>
+            <div class="col-lg-4">
+                <h2>Contáctanos</h2><br>
+                <p>+56 9 3753 1754</p>
+                <p>+56 9 7347 2639</p>
             </div>
-        </div>         
+        </div>  
     </footer>
     {% endblock%}
 

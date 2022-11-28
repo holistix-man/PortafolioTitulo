@@ -12,10 +12,10 @@
                 <a href="{% url 'DepartamentoList' %}"><button class="diseñobtnvolver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
             </div>
         </div>
-
+        <br>
         <div class="row">
             <div class="col-lg-12">
-                <h1>{{ depto_id.DEP_NOMBRE }}</h1>
+                <h1>{{ depto_id.DEP_NOMBRE }}ㅤ-ㅤ${{ depto_id.DEP_VALOR_DIA }} por noche</h1>
             </div>
             <div class="col-lg-12">
                 <p class="text-muted">{{ depto_id.DEP_DIRECCION }}</p>
@@ -23,117 +23,93 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 div-img">
                 <img src="{{ depto_id.DEP_IMAGEN1.url }}" class="img-principal" alt="foto-departamento" style="max-width: 1000px;">
             </div>
-            <div class="col-lg-6"> 
+            <div class="col-lg-4"> 
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 div-img">
                         <img src="{{ depto_id.DEP_IMAGEN2.url }}" class="img-secundaria" alt="foto-departamento" style="max-width: 400px;">
                     </div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 div-img">
                         <img src="{{ depto_id.DEP_IMAGEN3.url }}" class="img-secundaria" alt="foto-departamento" style="max-width: 400px;">
                     </div>
                 </div>
             </div>
+            <div class="col-lg-2 col-location"><br>
+                <img class="location" src="{% static 'img/location.png' %}"><br><br>
+                <h2>{{depto_id.ZON_ID}}</h2>
+            </div>
+            
         </div>
 
         <br>
 
         <div class="row">
             <div class="col-lg-7">
-                <p class="text-muted">
+                <p class="text-muted Descripcion">
                     {{ depto_id.DEP_CANTIDADPERSONAS }} huéspedes - 
                     {{ depto_id.DEP_CANTIDADHABITACIONES }} habitaciones - 
                     {{ depto_id.DEP_CANTIDADCAMAS }} camas - 
                     {{ depto_id.DEP_CANTIDADBANOS }} baños
                 </p>
                 <hr>
-                <h1>Descripción</h1>
-                <p>
+                <h1 class="Descripcion">Descripción</h1><br>
+                <p class="Descripcion">
                     {{ depto_id.DEP_DESCRIPCION}}. Información adicional: {{depto_id.DEP_INVENTARIO}}
                 </p>
-                <p>
+                <p class="Descripcion">
                     Además, este departamento cuenta con diferentes servicios extras que pueden ser contratados adicionalmente 
                     si así se desea, los cuales se dividen en tours y transportes. Este ultimo cuenta con tres diferentes 
                     opciones, pudiendo ser transporte desde el aeropuerto hacia el departamento, desde el departamento hacia al aeropuerto, 
                     o ambos (ida y vuelta). 
                 </p>
-                <p>Referente a los tours, se detalla la información a continuación:</p>
-
-                <div class="row">
-                    <div class="card-group">
-                        {% if depto_id.TOU_ID1 %}
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Tour 1: <b>{{depto_id.TOU_ID1.TOU_NOMBRE}}</b></h5>
-                                <p class="card-text">{{depto_id.TOU_ID1.TOU_DESCRIPCION}}</p>
-                            </div>
-                            <div class="card-footer">
-                                <p class="card-text">Valor: <b>{{depto_id.TOU_ID1.TOU_VALOR}}</b></p>
-                            </div>
-                        </div>
-                        {% endif %}
-                        {% if depto_id.TOU_ID1 %}
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Tour 2: <b>{{depto_id.TOU_ID2.TOU_NOMBRE}}</b></h5>
-                                <p class="card-text">{{depto_id.TOU_ID2.TOU_DESCRIPCION}}</p>
-                            </div>
-                            <div class="card-footer">
-                                <p class="card-text">Valor: <b>{{depto_id.TOU_ID2.TOU_VALOR}}</b></p>
-                            </div>
-                        </div>
-                        {% endif %}
-                        {% if depto_id.TOU_ID1 %}
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Tour 3: <b>{{depto_id.TOU_ID3.TOU_NOMBRE}}</b></h5>
-                                <p class="card-text">{{depto_id.TOU_ID3.TOU_DESCRIPCION}}</p>
-                            </div>
-                            <div class="card-footer">
-                                <p class="card-text">Valor: <b>{{depto_id.TOU_ID3.TOU_VALOR}}</b></p>
-                            </div>
-                        </div>
-                        {% endif %}
-                    </div>
-                    <!-- {% if depto_id.TOU_ID1 %}
-                    <div class="col-lg-12">
-                        <h5>Tour 1: <b>{{depto_id.TOU_ID1.TOU_NOMBRE}}</b> </h5>
+                <p class="Descripcion">Se detalla la información de los tours a continuación:</p>
+                
+                <p class="Descripcion">
+                    - Tour 1: <b>{{depto_id.TOU_ID1.TOU_NOMBRE}}</b> 
+                    <a class="btn" data-bs-toggle="collapse" href="#tour1" role="button" aria-expanded="false" aria-controls="tour1">
+                        Ver más
+                    </a>
+                </p>
+                <div class="collapse" id="tour1">
+                    <div class="card card-body">
                         <p>{{depto_id.TOU_ID1.TOU_DESCRIPCION}}</p>
-                        <p>Valor: <b>{{depto_id.TOU_ID1.TOU_VALOR}}</b></p>
+                        <p>Valor: <b>${{depto_id.TOU_ID1.TOU_VALOR}}</b></p>
                     </div>
-                    {% endif %}
-                    {% if depto_id.TOU_ID2 %}
-                    <div class="col-lg-12">
-                        <h5>Tour 2: <b>{{depto_id.TOU_ID2.TOU_NOMBRE}}</b> </h5>
+                </div>    
+                <p class="Descripcion">
+                    - Tour 2: <b>{{depto_id.TOU_ID2.TOU_NOMBRE}}</b> 
+                    <a class="btn" data-bs-toggle="collapse" href="#tour2" role="button" aria-expanded="false" aria-controls="tour2">
+                        Ver más
+                    </a>
+                </p>
+                <div class="collapse" id="tour2">
+                    <div class="card card-body">
                         <p>{{depto_id.TOU_ID2.TOU_DESCRIPCION}}</p>
-                        <p>Valor: <b>{{depto_id.TOU_ID1.TOU_VALOR}}</b></p>
+                        <p>Valor: <b>${{depto_id.TOU_ID2.TOU_VALOR}}</b></p>
                     </div>
-                    {% endif%}
-                    {% if depto_id.TOU_ID3 %}
-                    <div class="col-lg-12">
-                        <h5>Tour 3: <b>{{depto_id.TOU_ID3.TOU_NOMBRE}}</b> </h5>
+                </div>   
+                <p class="Descripcion">
+                    - Tour 3: <b>{{depto_id.TOU_ID3.TOU_NOMBRE}}</b> 
+                    <a class="btn" data-bs-toggle="collapse" href="#tour3" role="button" aria-expanded="false" aria-controls="tour3">
+                        Ver más
+                    </a>
+                </p>
+                <div class="collapse" id="tour3">
+                    <div class="card card-body">
                         <p>{{depto_id.TOU_ID3.TOU_DESCRIPCION}}</p>
-                        <p>Valor: <b>{{depto_id.TOU_ID1.TOU_VALOR}}</b></p>
+                        <p>Valor: <b>${{depto_id.TOU_ID3.TOU_VALOR}}</b></p>
                     </div>
-                    {% endif %} -->
-                </div>
-
-             
-                <hr>
-
-                <div class="row">
-                    <div class="col">
-                        
-                    </div>
-                </div>
+                </div>      
             </div>
             <div class="col-lg-5 rosa">
 
                 <div class="row rowvalor">
                     <div class="col">
-                        <p><b>${{ depto_id.DEP_VALOR_DIA }} CLP por noche.</b></p>
+                        <br>
+                        <h3>Registro de reserva</h3><hr><br>
+                        <!-- <p><b>${{ depto_id.DEP_VALOR_DIA }} CLP por noche.</b></p><br> -->
                     </div>
                 </div>
 
@@ -144,63 +120,57 @@
                             {%csrf_token%}
 
                             <div>
-                                <label for="id_fecha_ingreso">Fecha ingreso:</label>                            
+                                <label for="id_fecha_ingreso">ㅤ⠀ㅤIngreso: </label>                            
                               
                                 <input type="date" name="fecha_ingreso" required id="id_fecha_ingreso">
-                              
-                            </div>
-                          
-                            <div>  
-                                <label for="id_fecha_salida">Fecha salida:</label>
+                                
+
+                            <label for="id_fecha_salida">ㅤ⠀ㅤSalida: </label>
                                 <input type="date" name="fecha_salida" required id="id_fecha_salida">
                             </div>
+                            <br><br>
 
                             <div>  
-                                <label for="id_asistentes">Asistentes:</label>
-                                <textarea placeholder="Ingrese nombre completo y rut de los asistentes" name="asistentes" id="id_asistentes" cols="40" rows="10" required spellcheck="false"></textarea>
+                                <label for="id_asistentes">ㅤ⠀ㅤAsistentes:</label>
+                                <textarea class="asistentes" placeholder="Ingrese nombre completo y rut de los asistentes" name="asistentes" id="id_asistentes" cols="40" rows="10" required spellcheck="false"></textarea>
                             </div>
 
-                            <div>
+                            <br><br>
+
+                            <div>ㅤ⠀ㅤㅤ⠀ㅤ
                                 <label for="id_tour1">Tour 1: </label>
-                                <input type="checkbox" name="tour1" id="id_tour1">
-                            </div>
+                                <input type="checkbox" name="tour1" id="id_tour1"> ㅤ⠀ㅤㅤ⠀
 
-                            <div>
                                 <label for="id_tour2">Tour 2: </label>
-                                <input type="checkbox" name="tour1" id="id_tour2">
-                            </div>
+                                <input type="checkbox" name="tour1" id="id_tour2"> ㅤ⠀ㅤㅤ⠀
 
-                            <div>
                                 <label for="id_tour3">Tour 3: </label>
-                                <input type="checkbox" name="tour1" id="id_tour3">
+                                <input type="checkbox" name="tour1" id="id_tour3"> <br><br>
                             </div>
+                            <br>
+                           
 
-                            <div>
+                            <div>ㅤ⠀ㅤ
                                 <label for="id_transporte">Transporte: </label>
-                                <select name="transporte" id="id_transporte">
+                                <select name="transporte" id="id_transporte" class="transporte">
                                     <option value="400">Sin transporte</option>
                                     <option value="100">Aeropuerto a residencia</option>
                                     <option value="200">Residencia a aeropuerto</option>
                                     <option value="300">Ambos (ida y vuelta)</option>
                                 </select>
                             </div>
-
+                            <br>
                             <div class="input-div">
-                                <button type="submit" class="reserva"><b>RESERVAR</b></button>
+                                ㅤ⠀ㅤㅤ⠀ㅤㅤ⠀ㅤㅤ<button type="submit" class="reserva"><b>RESERVAR</b></button>
                             </div>
 
                         </form>
                 
                     </div>
-                    <!-- <div class="col-12">
-                        <form method="POST">
-                            {%csrf_token%}
-                            {{form.as_div}}
-                            <button type="submit" class="reserva"><b>RESERVAR</b></button>
-                        </form>
-                    </div> -->
+                   
                 
                 </div>
+                <br><br>
 
             </div>
         </div>
