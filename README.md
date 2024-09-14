@@ -4,12 +4,7 @@ ________________________________________________________________________________
 Proyecto desarrollado para Portafolio de Título de la carrera Ingenería en Informática Duoc UC.
 Seccion 001D Grupo 6, caso 1 "ARRIENDOS DE TEMPORADA - TURISMO REAL"
 
-Integrantes:  Diego Valladares N.
-              Bastian Passteni M.
-              Matias Salas V.
-              
-Docente: Arturo Vargas R.
-______________________________________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________
 
 La empresa “Turismo Real” ofrece arriendo de departamentos y otros servicios en zonas turísticas. La empresa cuenta con un sistema de reservas a través de 
 páginas de venta tradicional y arriendo masivo. Esta forma de operar actualmente genera tener que hacer un pago excesivo por el servicio, a su vez no cuentan 
